@@ -1,8 +1,6 @@
-<𝐖𝐈𝐓𝐇 𝐋𝐎𝐕𝐄 𝐓𝐖𝐈𝐏𝐒 html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<audio controls autoplay>
-     <source src="Aval Swaasam.mp3" type="audio/mp4">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday 𝐌𝐄𝐑𝐈𝐍 ❤️</title>
@@ -111,6 +109,145 @@ body{
 .final p{
     max-width:800px;
     margin:auto;
+    margin-top:20px;
+    font-size:1.2rem;
+    line-height:1.8;
+}
+
+.heart{
+    position:fixed;
+    color:red;
+    animation:float 6s linear infinite;
+    opacity:.6;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(10px);}
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>🎂 Happy Birthday 𝐌𝐄𝐑𝐈𝐍 ❤️</h1>
+    <p>A small page filled with beautiful memories ✨</p>
+    <div class="scroll-text"> ↓ Scroll Down ↓ </div>
+</section>
+
+<section class="quote reveal">
+    𝗬𝗼𝘂'𝗿𝗲 𝗧𝗵𝗲 𝗠𝗼𝘀𝘁 𝗕𝗲𝗮𝘂𝘁𝗶𝗳𝘂𝗹 𝗣𝗲𝗿𝘀𝗼𝗻 𝗜 𝗞𝗻𝗼𝘄.
+    𝗜 𝗟𝗼𝘃𝗲 𝗬𝗼𝘂 𝗘𝗻𝗱𝗹𝗲𝘀𝘀𝗹𝘆 💕💞❤️‍🩹
+</section>
+
+<section class="gallery">
+
+<div class="polaroid reveal">
+    <img src="/g.png"> 
+    <div class="caption">𝐀 smile that brightens every day ❤️</div>
+</div>
+
+<div class="polaroid reveal">
+    <img src="/b.png">
+    <div class="caption">Grace, beauty and kindness ✨</div>
+</div>
+
+<div class="polaroid reveal">
+    <img src="/c.png">
+    <div class="caption">Every memory with you is special 🌸</div>
+</div>
+
+<div class="polaroid reveal">
+    <img src="/d.png">
+    <div class="caption">A picture full of love 💕</div>
+</div>
+
+<div class="polaroid reveal">
+    <img src="/e.png">
+    <div class="caption">Golden moments forever 📸</div>
+</div>
+
+<div class="polaroid reveal">
+    <img src="/f.png">
+    <div class="caption">The most beautiful soul ❤️</div>
+</div>
+
+</section>
+
+<section class="final reveal">
+    <h2>Happy Birthday My Love ❤️</h2>
+    <p>
+        May your life be filled with happiness, laughter,
+        success and endless love. Thank you for being the
+        most wonderful person in my life. I wish you a day
+        as beautiful as your smile and a future filled with
+        every dream you hold close to your heart. 🎂✨💕
+    </p>
+</section>
+
+<script>
+
+for(let i=0;i<25;i++){
+    let heart=document.createElement('div');
+    heart.innerHTML='❤';
+    heart.classList.add('heart');
+    heart.style.left=Math.random()*100+'vw';
+    heart.style.fontSize=(15+Math.random()*25)+'px';
+    heart.style.animationDuration=(4+Math.random()*5)+'s';
+    document.body.appendChild(heart);
+}
+
+function reveal(){
+    const reveals=document.querySelectorAll('.reveal');
+
+    reveals.forEach(item=>{
+        const top=item.getBoundingClientRect().top;
+        const windowHeight=window.innerHeight;
+
+        if(top < windowHeight-100){
+            item.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll',reveal);
+reveal();
+
+</script>
+
+</body>
+</html>    margin:auto;
     margin-top:20px;
     font-size:1.2rem;
     line-height:1.8;
